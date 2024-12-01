@@ -1,4 +1,8 @@
-pyspark==3.4.0
-pandas==2.1.1
+joblib==1.4.2
+numpy==1.26.4
+seaborn==0.13.2
+sklearn==1.5.2
+pyspark==3.5.3
+pandas==2.1.4
 scikit-learn==1.2.2
-matplotlib==3.8.0
+matplotlib==3.9.3
