@@ -6,4 +6,4 @@ RUN pip install pyspark pandas scikit-learn
 WORKDIR /app
 COPY . .
 
-CMD ["python", "scripts/train_model.py"]
+CMD ["python", "scr/train_model.py"]
