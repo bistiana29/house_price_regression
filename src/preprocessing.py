@@ -19,5 +19,5 @@ def preprocess_data(input_path, output_path):
 
     pd.DataFrame(processed_data).to_csv(output_path, index=False)
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     preprocess_data('data/DATA-RUMAH.csv', 'data/processed-DATA-RUMAH.csv')
