@@ -1,13 +1,9 @@
-FROM python:3.12.3-slim
+FROM python:3.12-slim
 
-# Install dependencies
-RUN apt-get update && apt-get install -y openjdk-11-jdk
-RUN pip install pyspark pandas scikit-learn matplotlib
+RUN apt-get update && apt-get install -y openjdk-11-jdk-headless
+RUN pip install pyspark pandas scikit-learn
 
-# Set work directory
 WORKDIR /app
-
-# Copy project
 COPY . .
 
-CMD ["bash"]
+CMD ["python", "scripts/train_model.py"]
