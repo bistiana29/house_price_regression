@@ -1,7 +1,7 @@
 # House Price Regression
 
 ## Deskripsi
-Proyek ini bertujuan memprediksi data harga rumah baru berdasarkan karakteristi>
+Proyek ini bertujuan memprediksi data harga rumah baru berdasarkan karakteristik pada data rumah sebelumnya menggunakan model Linear Regression.
 
 ## Anggota Kelompok 9
 1. Bistiana Syafina Ridho / 3323600037
