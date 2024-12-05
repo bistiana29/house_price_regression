@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  house_price:
+    build: .
+    container_name: house_price_app
+    volumes:
+      - .:/app
+    command: bash -c "python3 src/predict.py"
+    environment:
+      - PYSPARK_PYTHON=python3
+      - PYSPARK_DRIVER_PYTHON=python3
+    networks:
+      - house_price_network
+    depends_on:
+      - spark-master
+      - spark-worker
+
+  spark-master:
+    image: bitnami/spark:latest
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "7077:7077"
+      - "8080:8080"
+    networks:
+      - house_price_network
+
+  spark-worker:
+    image: bitnami/spark:latest
+    container_name: spark-worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    networks:
+      - house_price_network
+
+networks:
+  house_price_network:
+    driver: bridge
