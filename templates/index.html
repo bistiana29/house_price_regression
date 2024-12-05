@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictions</title>
+</head>
+<body>
+    <h1>House Price Predictions</h1>
+    <table border="1">
+        <tr>
+            <th>LB</th>
+            <th>LT</th>
+            <th>KT</th>
+            <th>KM</th>
+            <th>GRS</th>
+            <th>Prediction</th>
+        </tr>
+        {% for index, row in results.iterrows() %}
+        <tr>
+            <td>{{ row['LB'] | int }}</td>
+            <td>{{ row['LT'] | int }}</td>
+            <td>{{ row['KT'] | int }}</td>
+            <td>{{ row['KM'] | int }}</td>
+            <td>{{ row['GRS'] | int }}</td>
+            <td>{{ row['prediction'] | round(0) | int }} juta</td>  <!-- Membulatkan dan mengubah ke integer -->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
