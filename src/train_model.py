@@ -1,4 +1,4 @@
-import pandas as pd
+mport pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
@@ -7,12 +7,12 @@ from preprocessing import preprocess_data
 
 def train_model(input_path, model_path):
     # Preprocessing data
-    processed_data_path = "data/processed-DATA-RUMAH.csv"
+    processed_data_path = "./data/processed-DATA-RUMAH.csv"
     preprocess_data(input_path, processed_data_path)
 
     # Load preprocessed data
     data = pd.read_csv(processed_data_path)
-    X = data.drop(columns=["HARGA", "NO", "NAMA RUMAH"])
+    X = data.drop(columns=["HARGA"])
     y = data["HARGA"]
 
     # Train-test split
