@@ -1,6 +1,0 @@
-config:
-  - type: proxy
-    listen: tcp:0.0.0.0:8080
-    connect: unix:/var/lib/lxc/house_price/socket
-  - type: user.network
-    value: bridged
